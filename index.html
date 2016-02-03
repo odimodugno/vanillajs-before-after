@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vanilla Before&After Plugin</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <style>
+    .before-after:first-child { margin: 30px auto; }
+    .before-after { margin: 80px auto; }
+  </style>
+</head>
+<body>
+  <div class="container text-center">
+      <h1>Vanilla Before&After Plugin</h1>
+
+      <h2 class="text-left">Some samples: <h2>
+      <div id="before-after-1" class="before-after">
+      </div>
+
+      <div id="before-after-2" class="before-after">
+      </div>
+
+      <div class="before-after" data-before-after>
+          <img src="img/movies/godzilla-before.jpg">
+          <img src="img/movies/godzilla-after.jpg">
+      </div>
+
+      <div class="before-after" data-before-after>
+          <img src="img/movies/300-before.jpg">
+          <img src="img/movies/300-after.jpg">
+      </div>
+  </div>
+  <script src="js/before-after.js"></script>
+  <script>
+    var images = [{
+        'before'   : 'img/volcanic/volcanic-before.jpg',
+        'after'    : 'img/volcanic/volcanic-after.jpg'
+    },
+    {
+        'before'   : 'img/volcanic/volcanic-2-before.jpg',
+        'after'    : 'img/volcanic/volcanic-2-after.jpg'
+    }];
+
+    for (i = 1; i <= 2; i++) {
+        new beforeAfter({
+            'elId'     : 'before-after-'+i,
+            'before'   : images[i - 1].before,
+            'after'    : images[i - 1].after
+        });
+    }
+  </script>
+</body>
+</html>
