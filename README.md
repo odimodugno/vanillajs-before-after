@@ -3,6 +3,8 @@
 Before&After is a simple Javascript library to create the beautiful sliding effect of two images (It's mobile compatible).
 It has no dependency and is style-free.
 
+![example GIF](https://drive.google.com/uc?export=view&id=0B268QXhzVpRuSWpHQUF5SzZyTmM)
+
 ### Usage
 
 Include the script in your page:
