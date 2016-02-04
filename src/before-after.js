@@ -68,13 +68,20 @@
         settings.callbackBefore;
 
         var target = e.target;
-        var x;
+        var x = 0;
+        var totalOffsetX = 0;
         var container = target.parentNode.parentNode;
+        var currentElement = container;
 
-        x = e.pageX - container.offsetLeft;
+        do{
+            totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
+        }
+        while(currentElement = currentElement.offsetParent)
+
+        x = e.pageX - totalOffsetX;
 
         if (e.type == 'touchmove') {
-            x = e.touches[0].pageX - container.offsetLeft;
+            x = e.touches[0].pageX - totalOffsetX;
         }
 
         if (x <= parseInt(container.style.width)) {
