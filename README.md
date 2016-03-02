@@ -17,9 +17,9 @@ Then create the container with:
 
 ```js
     new beforeAfter({
-        'elId'     : 'div-id-on-the-dom',
-        'before'   : 'path/to/yourimage-before.jpg',
-        'after'    : 'path/to/yourimage-after.jpg'
+        'el'     : 'div-id-on-the-dom', // or just the node object
+        'before' : 'path/to/yourimage-before.jpg',
+        'after'  : 'path/to/yourimage-after.jpg'
     });
 ```
 

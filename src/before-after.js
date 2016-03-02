@@ -14,7 +14,7 @@
     var settings;
 
     var defaults = {
-        elId: 'before-after',
+        el: 'before-after',
         before: '',
         after: '',
         callbackBefore: function () {},
@@ -135,13 +135,18 @@
         var divs, container, images;
 
         settings = extend( defaults, options || {} );
-        container = document.getElementById(settings.elId);
+
+        if (settings.el.nodeType === Node.ELEMENT_NODE) {
+          container = settings.el;
+        } else {
+          container = document.getElementById(settings.el);
+        }
 
         container.style.cursor = 'col-resize';
         container.style.position = 'relative';
 
         if (settings.before == '' || settings.after == '') {
-            console.error('Images for the container #'+ settings.elId + ' were not specified');
+            console.error('Images for the container #' + container.id + ' ' + container + ' were not specified');
 
             return false;
         }
@@ -176,15 +181,11 @@
                 return;
             }
 
-            var container = element;
-
-            container.setAttribute('id', Math.floor(Math.random()*11));
-
             var beforeImg = element.getElementsByTagName('img')[0];
             var afterImg = element.getElementsByTagName('img')[1];
 
             beforeAfter({
-                'elId' : container.getAttribute('id'),
+                'el' : element,
                 'before' : beforeImg,
                 'after' : afterImg
             });

@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container text-center">
-      <h1>Vanilla Before&After Plugin</h1>
+      <h1>Vanilla Before&amp;After Plugin</h1>
 
       <h2 class="text-left">Some samples: <h2>
       <div id="before-after-1" class="before-after">
@@ -43,9 +43,9 @@
 
     for (i = 1; i <= 2; i++) {
         new beforeAfter({
-            'elId'     : 'before-after-'+i,
-            'before'   : images[i - 1].before,
-            'after'    : images[i - 1].after
+            'el'     : 'before-after-'+i,
+            'before' : images[i - 1].before,
+            'after'  : images[i - 1].after
         });
     }
   </script>
